@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block body_block %}
+
+   <div class="container">
+      <div class="jumbotron">
+        {% if registered %}
+          <h1>Thank you for registering!</h1>
+        {% else %}
+          <h1 style='color:black'>Register Here</h1>
+          
+  <div class='container'>
+        <form enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <label for="exampleInputEmail1">Name</label>
+            <div class='form-group' id="exampleInputEmail1"><input class='form-control' type="text" name= "username"></div>
+              
+              <label for="exemail">Email address</label>
+              <div class='form-group' id="exeemail"><input class='form-control' type="email" name= "email"></div>
+
+              <label for="exapass">Password</label>
+              <div class='form-group' id="exepass"><input class='form-control' type="password" name= "password"></div>
+
+              <label for="exeport">Portfolio</label>
+              <div class='form-group' id="exeport"></div><input class='form-control' type="text" name= "portfolio"></div>
+                <P></P>   
+             <input class='btn btn-primary btn-block' type="submit " name="" value="Register">
+
+        </form>
+        {% endif %}
+      </div>
+  <style>
+    
+.jumbotron {
+  border-radius: 5%;
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-bottom: 10%;
+  margin-right: 25%;
+  background-image: linear-gradient(to , rgba(255,0,0,0), rgb(18, 1, 26));
+}
+
+body {
+
+  background-image:linear-gradient(to left , rgba(255,0,0,0), rgb(18, 1, 26));
+}
+
+label{
+  font-weight:"Poppins", "Arial", "Helvetica Neue", sans-serif; 
+}
+</style>
+      
+ {% endblock %}
+  

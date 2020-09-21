@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<!--- Bootstrap --->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  
+<div class="container">
+    <div class="jumbotron">
+      <h1 style="color:black;"> Please Login</h1>
+
+        <form method="post" action="{% url 'First_app:user_login' %}">
+          {% csrf_token %}
+          {# A more "HTML" way of creating the login form#}
+          <div>
+          <label style="color: black;" for="username"></label>
+          <input class="form-control" type="text" name="username" placeholder="Username">
+          </div>
+          <div>
+          <label style='color: blac' for="password"></label>
+          <input class='form-control' type="password" name="password" placeholder="Passowrd">
+          </div>
+          <div>
+            <P></P>
+          <input class='btn btn-primary btn-block' type="submit" name="" value="LOGIN">
+          <p>Don't have an Account? <a href="{% url 'First_app:registered'%}"> SignUp Now!</a></p>
+          </div>
+
+        </form>
+
+</div>
+</div>
+<style>
+.jumbotron {
+  color:black;
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+  padding: auto;
+  margin-top : 8%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 20%;
+ background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(77, 2, 12));
+ 
+}
+body{
+  
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(54, 52, 54));
+}
+
+  </style>
+{% endblock %}
