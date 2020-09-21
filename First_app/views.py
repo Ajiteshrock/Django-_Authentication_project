@@ -7,9 +7,9 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth import authenticate,login,logout
 import zcrmsdk
-import requests
 
-api = requests.get('https://www.zohoapis.com/crm/v2/settings/modules')
+
+
 
 
 # Create your views here.
